@@ -1,8 +1,0 @@
-type Query {
-    facts(animal: String!, size: Int = 5): [Facts!]
-}
-
-type Facts {
-    text: String!
-    source: String
-}
