@@ -8,6 +8,7 @@ Runs a Java | Springboot | Graphql based application that utilizes the free API 
 ### To run application via Gradle
 `./gradlew bootRun`
 
+
 ### To build and run as container
 
 ```
@@ -22,7 +23,9 @@ docker run -p 8088:8088 karthik20/animal-facts:latest
 
 ### View the GraphQL APIs via Graphiql playground
 
-Go to: http://localhost:8088/graphiql
+Go to: 
+http://localhost:8088/graphiql (if ran without compose)
+http://localhost:8080/graphiql (if ran with compose)
 
 
 > The code uses Spring's `RestClient` which is a blocking fluent API that's replacement for soon to be deprecated `RestTemplate`.
