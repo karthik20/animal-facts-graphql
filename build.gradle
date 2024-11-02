@@ -30,6 +30,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-graphql'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'javax.cache:cache-api:1.1.1'
+	implementation 'javax.xml.bind:jaxb-api:2.3.1' // for ehcache xml
+	runtimeOnly 'com.sun.xml.bind:jaxb-impl:2.3.3' // for ehcache xml
+	implementation 'org.ehcache:ehcache:3.9.11'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
