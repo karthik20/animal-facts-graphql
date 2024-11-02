@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +13,7 @@ public class RandomTokenService {
     private static final String CHARACTERS = "abcdefghijklmnopqrstuvwxyz0123456789#$%&()@!";
     private static final SecureRandom RANDOM = new SecureRandom();
 
+    @Cacheable(value = "animal-facts-token", key = "'token'")
     public String getToken() {
         return generateRandomString(20);
     }

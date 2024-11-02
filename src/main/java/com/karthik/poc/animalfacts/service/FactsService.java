@@ -2,6 +2,7 @@ package com.karthik.poc.animalfacts.service;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -18,6 +19,7 @@ public class FactsService {
         this.restClient = restClient;
     }
 
+    @Cacheable(value = "animal-facts", key = "#animal + '-' + #size")
     public List<Facts> getRandomFacts(final String animal, final Integer size) {
 
         var uri = UriComponentsBuilder.fromUriString("/facts/random")
